@@ -1,0 +1,27 @@
+
+#include <stdio.h>
+
+int main() {
+    long long n, rem, result = 0, place = 1;
+
+    printf("Enter a binary number: ");
+    scanf("%lld", &n);
+
+    while (n > 0) {
+        rem = n % 10;
+
+        if (rem == 0) {
+            result = result + 1 * place;
+        }
+        else if (rem == 1) {
+            result = result + 0 * place;
+        }
+
+        place = place * 10;
+        n = n / 10;
+    }
+
+    printf("%04lld\n", result);
+
+    return 0;
+}
